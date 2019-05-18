@@ -12,7 +12,6 @@
   font-display: swap;
   src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKfw7z.ttf) format('truetype');
 }
-@phone ( max-width: 500px );
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -179,7 +178,7 @@ p {
   margin: 0 auto;
 }
 .btn {
-  background-color: black;
+  background-color: #22283A;
   color: white;
   padding: 10px 15px;
   font-weight: bold;
@@ -189,6 +188,18 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.2s;
+}
+.btn:hover {
+  background-color: white;
+  color: #22283A;
+  border: 0.5px solid #22283A;
+}
+@media ( max-width: 500px ) {
+  .btn {
+    width: 100%;
+    padding: 25px 0px;
+  }
 }
 .nav-and-logo {
   display: flex;
@@ -229,6 +240,13 @@ footer {
 .home .intro p {
   padding: 0 15px;
 }
+@media ( max-width: 500px ) {
+  .home .intro img {
+    max-height: 150px;
+    border-radius: 5px;
+    max-width: 100%;
+  }
+}
 .home .space-images {
   display: flex;
   flex-wrap: wrap;
@@ -239,6 +257,15 @@ footer {
   margin: 20px 2.5%;
   border-radius: 20px;
   height: 100%;
+}
+@media ( max-width: 500px ) {
+  .home .space-images img {
+    display: none;
+  }
+  .home .space-images img:first-child {
+    display: inherit;
+    width: 100%;
+  }
 }
 .home .visit-planets {
   padding: 15px;
@@ -256,8 +283,21 @@ footer {
   display: flex;
   justify-content: center;
 }
+@media ( max-width: 500px ) {
+  .home .walk {
+    flex-direction: column-reverse;
+    padding: 50px 15px;
+    padding-top: 20px;
+  }
+}
 .home .walk .walk-text {
   width: 50%;
+}
+@media ( max-width: 500px ) {
+  .home .walk .walk-text {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 .home .walk .walk-text h3 {
   margin-bottom: 10px;
@@ -273,4 +313,10 @@ footer {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+@media ( max-width: 500px ) {
+  .home .walk .walk-img {
+    width: 100%;
+    margin-left: 0px;
+  }
 }
