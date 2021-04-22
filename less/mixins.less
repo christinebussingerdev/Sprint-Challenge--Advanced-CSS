@@ -1,1 +1,30 @@
 // Mixins Here
+
+.btn-styler(@justify: center, @align: center) {
+    background-color: @btn-bg-color;
+    color: @btn-text-color;
+    padding: 10px 15px;
+    font-weight: bold;
+    width: 32%;
+    font-size: 2rem;
+    border-radius: 5px;
+    .flex(center, center);
+    transition: background-color 0.2s;
+
+    &:hover {
+    background-color: @btn-text-color;
+    color: @btn-bg-color;
+    border: 0.5px solid @btn-bg-color;
+    }
+
+    @media @phone {
+      width: 100%;
+      padding: 25px 0px;
+    }
+  }
+
+  .flex(@justify: space-evenly, @align: center) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+  }
